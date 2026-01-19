@@ -17,9 +17,11 @@ body {
 
     box-shadow: #FEC01F 2px 3px 5px;
     border-radius: 20px;
-    height: 50vh;
-    width: 75%;
+    flex: 1;
+    width: 90%;
     padding: 20px;
+
+    gap: 5%;
 }
 
 nav, footer {
@@ -29,7 +31,6 @@ nav, footer {
     justify-content: space-around;
     align-items: center;
     font-size: 25px;
-    padding: 10px;
 }
 
 nav {
@@ -43,37 +44,55 @@ span {
     align-items: center;
 }
 
-input {
-    background-color: black;
-    color: white;
-}
-
 img {
     width: 3rem;
     height: 3rem;
 }
 
-.digit {
-    border-radius: 20px;
-    height: 50px;
-}
-
 input, button {
-    height: 50px;
     flex: 1;
     font-size: 30px;
+    border-radius: 20px;
+}
+
+input {
+    background-color: black;
+    color: white;
+    padding: 0;
+    text-align: right;
+    height: 150px;
+    font-size: 60px
 }
 
 .calc-row {
     display: flex;
     justify-content: space-between;
-}
 
-input {
+    flex: 1;
+    align-items: stretch;
+    margin: 0;
     padding: 0;
-    text-align: right;
 }
 
 a {
     color: white;
+}
+
+.buttons {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    background-color: black;
+    color: white;
+    font-weight: 900;
 }

@@ -91,8 +91,7 @@ function updateNumberVariables(val) {
 
 function evalExpression() {
     let result = operate(Number((num1))? num1: 0, Number((num2))? num2:0, operator); // orring with 0 is included to ensure '.' as a value is seen as 0
-    console.log("Result is: " + result)
-    input.value = '' + result;
+    input.value = '' + Number(result).toFixed(2);
     num1 = '' + result;
     num2 = '';
     operator = '';
