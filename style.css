@@ -17,8 +17,8 @@ body {
 
     box-shadow: #FEC01F 2px 3px 5px;
     border-radius: 20px;
-    height: 70vh;
-    width: 50%;
+    height: 50vh;
+    width: 75%;
     padding: 20px;
 }
 
@@ -27,16 +27,30 @@ nav, footer {
     color: white;
     display: flex;
     justify-content: space-around;
-    padding: 15px;
+    align-items: center;
+    font-size: 25px;
+    padding: 10px;
 }
 
 nav {
     font-weight: 900;
+    justify-content: space-between;
+}
+
+span {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 input {
     background-color: black;
     color: white;
+}
+
+img {
+    width: 3rem;
+    height: 3rem;
 }
 
 .digit {
@@ -57,6 +71,9 @@ input, button {
 
 input {
     padding: 0;
-    
     text-align: right;
+}
+
+a {
+    color: white;
 }
