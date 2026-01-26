@@ -38,6 +38,9 @@ function operate(num1, num2, operator) {
         case '÷': 
             return divide(num1, num2);
             break;
+        default:
+            return num1;
+            break;
     }
 }
 
@@ -90,8 +93,9 @@ function updateNumberVariables(val) {
 
 
 function evalExpression() {
-    let result = operate(Number((num1))? num1: 0, Number((num2))? num2:0, operator); // orring with 0 is included to ensure '.' as a value is seen as 0
-    input.value = '' + Number(result).toFixed(2);
+    let result = Number(operate(Number((num1))? num1: 0, Number((num2))? num2:0, operator)).toFixed(3); // orring with 0 is included to ensure '.' as a value is seen as 0
+    result = (result % Number(result).toFixed(0) == 0)? Number(result).toFixed(0): '' + result;
+    input.value = '' + result;
     num1 = '' + result;
     num2 = '';
     operator = '';
