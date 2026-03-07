@@ -163,12 +163,5 @@ document.querySelectorAll('button').forEach(
             default:
                 break;
         }
-        console.log(
-            `
-            num1: ${num1}
-            op: ${operator}
-            num2: ${num2}
-            `)
-        console.log(Number(num1) != 0)
     })
 );
