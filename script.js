@@ -49,12 +49,12 @@ function updateNumberVariables(val) {
         num1 = Number((num1))? num1: 0
         num2 = Number((num2))? num2: 0
         if (!num1 && !operator && !num2) return;
-        else if (num1 && !operator && !num2) num1 -= num1.at(-1); 
+        else if (num1 && !operator && !num2) num1 = num1.substring(0, num1.length - 1); 
         else if (num1 && operator && !num2) operator = ''; 
-        else if (!num1 && operator && num2) num2 -= num2.at(-1);
+        else if (!num1 && operator && num2) num2 = num2.substring(0, num2.length - 1);
         else if (!num1 && operator && !num2) operator = '';
         else if (!num1 && !num2 && !operator) num1 -= val;
-        else num2 -= num2.at(-1); // same as (num1 && operator && num2)
+        else num2 = num2.substring(0, num2.length - 1); // same as (num1 && operator && num2)
     } else {
         if (operators.includes(val)) {
             if (num2 && operator) {
@@ -85,6 +85,7 @@ function updateNumberVariables(val) {
                 }
             }
         }
+        else if (Number(num1) == "0") num1 = val;
         else if (!num1 && operator) num2 += val;
         else if (!num2 && !operator) num1 += val;
         else num2 += val;
@@ -123,8 +124,9 @@ document.querySelectorAll('button').forEach(
             case '7':
             case '8':
             case '9':
-                input.value += btnValue;
-                updateNumberVariables(btnValue);                
+                if (num1 != "0.000") input.value += btnValue;   
+                else input.value = btnValue; 
+                updateNumberVariables(btnValue); 
                 break;
             case '+':
                 if (!operator) input.value += btnValue;
@@ -161,5 +163,12 @@ document.querySelectorAll('button').forEach(
             default:
                 break;
         }
+        console.log(
+            `
+            num1: ${num1}
+            op: ${operator}
+            num2: ${num2}
+            `)
+        console.log(Number(num1) != 0)
     })
 );
